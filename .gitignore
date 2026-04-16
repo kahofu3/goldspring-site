@@ -1,0 +1,4 @@
+create_sc_pages.py
+.DS_Store
+*.pyc
+__pycache__
