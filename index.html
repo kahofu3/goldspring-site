@@ -1006,6 +1006,64 @@
         var waValEl = document.querySelector('.contact-item:nth-child(3) .contact-value a');
         if (waValEl) waValEl.textContent = c.contact_whatsapp;
       }
+
+      // Services (6 cards, matched by index within #services)
+      var serviceCards = document.querySelectorAll('#services .service-card');
+      var serviceData = [
+        [c.service1_title_zh, c.service1_title_en, c.service1_desc_zh, c.service1_desc_en],
+        [c.service2_title_zh, c.service2_title_en, c.service2_desc_zh, c.service2_desc_en],
+        [c.service3_title_zh, c.service3_title_en, c.service3_desc_zh, c.service3_desc_en],
+        [c.service4_title_zh, c.service4_title_en, c.service4_desc_zh, c.service4_desc_en],
+        [c.service5_title_zh, c.service5_title_en, c.service5_desc_zh, c.service5_desc_en],
+        [c.service6_title_zh, c.service6_title_en, c.service6_desc_zh, c.service6_desc_en]
+      ];
+      serviceCards.forEach(function(card, i) {
+        var d = serviceData[i];
+        if (!d) return;
+        var tzh = card.querySelector('.service-title-zh');
+        var ten = card.querySelector('.service-title-en');
+        var dzh = card.querySelector('.service-desc-zh');
+        var den = card.querySelector('.service-desc-en');
+        if (tzh && d[0]) tzh.textContent = d[0];
+        if (ten && d[1]) ten.textContent = d[1];
+        if (dzh && d[2]) dzh.textContent = d[2];
+        if (den && d[3]) den.textContent = d[3];
+      });
+
+      // Stats bar (5 stat-items)
+      var statItems = document.querySelectorAll('.stats-bar .stat-item');
+      var statData = [
+        [c.stat1_value, c.stat1_label_zh, c.stat1_label_en],
+        [c.stat2_value, c.stat2_label_zh, c.stat2_label_en],
+        [c.stat3_value, c.stat3_label_zh, c.stat3_label_en],
+        [c.stat4_value, c.stat4_label_zh, c.stat4_label_en],
+        [c.stat5_value, c.stat5_label_zh, c.stat5_label_en]
+      ];
+      statItems.forEach(function(item, i) {
+        var d = statData[i];
+        if (!d) return;
+        var numEl = item.querySelector('.stat-number');
+        var lzh = item.querySelector('.stat-label-zh');
+        var len = item.querySelector('.stat-label-en');
+        if (numEl && d[0]) numEl.textContent = d[0];
+        if (lzh && d[1]) lzh.textContent = d[1];
+        if (len && d[2]) len.textContent = d[2];
+      });
+
+      // Compliance intro
+      var complianceSection = document.getElementById('compliance');
+      if (complianceSection) {
+        var cdzh = complianceSection.querySelector('.compliance-intro .about-text-zh');
+        var cden = complianceSection.querySelector('.compliance-intro .about-text-en');
+        if (cdzh && c.compliance_desc_zh) cdzh.textContent = c.compliance_desc_zh;
+        if (cden && c.compliance_desc_en) cden.textContent = c.compliance_desc_en;
+      }
+
+      // Footer copyright
+      if (c.footer_copy) {
+        var footerCopyEl = document.querySelector('.footer-copy');
+        if (footerCopyEl) footerCopyEl.textContent = c.footer_copy;
+      }
     })
     .catch(function(){/* silently ignore — hardcoded content remains */});
 })();

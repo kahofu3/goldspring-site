@@ -19,5 +19,60 @@
   "contact_email": "cs@goldspringgroup.io",
   "contact_whatsapp": "+852 6307 8840",
   "office_intro_zh": "金泉集團位於灣仔駱克道333號亞洲聯合財務中心40樓，地處香港核心商業區。",
-  "office_intro_en": "Gold Spring Group is located on the 40th floor of United Asia Finance Centre, 333 Lockhart Road, Wan Chai — at the heart of Hong Kong's commercial district."
+  "office_intro_en": "Gold Spring Group is located on the 40th floor of United Asia Finance Centre, 333 Lockhart Road, Wan Chai — at the heart of Hong Kong's commercial district.",
+
+  "service1_title_zh": "信託設立及管理",
+  "service1_title_en": "Trust Formation & Administration",
+  "service1_desc_zh": "為客戶設計及設立度身訂造的信託架構，包括全權信託、固定信託及慈善信託，並提供持續的信託管理服務。",
+  "service1_desc_en": "Design and establish bespoke trust structures for clients, including discretionary trusts, fixed trusts, and charitable trusts, with ongoing trust administration services.",
+
+  "service2_title_zh": "企業服務",
+  "service2_title_en": "Corporate Services",
+  "service2_desc_zh": "提供香港公司註冊、公司秘書、註冊辦事處、董事及股東代名人服務，支援客戶的企業架構需求。",
+  "service2_desc_en": "Provide Hong Kong company incorporation, company secretarial, registered office, and nominee director and shareholder services to support clients' corporate structuring needs.",
+
+  "service3_title_zh": "財富傳承規劃",
+  "service3_title_en": "Wealth Succession Planning",
+  "service3_desc_zh": "協助高淨值家族制定全面的財富傳承策略，確保資產按家族意願跨代傳承，避免遺產糾紛。",
+  "service3_desc_en": "Assist high-net-worth families in developing comprehensive wealth succession strategies, ensuring assets pass across generations according to family wishes and avoiding estate disputes.",
+
+  "service4_title_zh": "資產保護方案",
+  "service4_title_en": "Asset Protection Solutions",
+  "service4_desc_zh": "透過信託及企業架構為客戶建立有效的資產保護屏障，隔離個人與商業風險。",
+  "service4_desc_en": "Build effective asset protection barriers through trust and corporate structures, isolating personal and business risks for clients.",
+
+  "service5_title_zh": "合規及盡職調查",
+  "service5_title_en": "Compliance & Due Diligence",
+  "service5_desc_zh": "根據《打擊洗錢及恐怖分子資金籌集條例》要求，提供客戶盡職調查（CDD）、反洗錢（AML）合規及持續監察服務。",
+  "service5_desc_en": "Provide Customer Due Diligence (CDD), Anti-Money Laundering (AML) compliance, and ongoing monitoring services in accordance with the Anti-Money Laundering and Counter-Terrorist Financing Ordinance.",
+
+  "service6_title_zh": "稅務及會計服務",
+  "service6_title_en": "Tax & Accounting Services",
+  "service6_desc_zh": "為信託及企業客戶提供稅務規劃、會計記錄、審計安排及利得稅申報服務。",
+  "service6_desc_en": "Provide tax planning, accounting records, audit arrangements, and profits tax filing services for trust and corporate clients.",
+
+  "stat1_value": "15+",
+  "stat1_label_zh": "年行業經驗",
+  "stat1_label_en": "Years of Experience",
+
+  "stat2_value": "TC010106",
+  "stat2_label_zh": "TCSP牌照編號",
+  "stat2_label_en": "TCSP Licence No.",
+
+  "stat3_value": "6+",
+  "stat3_label_zh": "核心服務範疇",
+  "stat3_label_en": "Core Service Areas",
+
+  "stat4_value": "8+",
+  "stat4_label_zh": "政府公職委任",
+  "stat4_label_en": "Gov't Appointments",
+
+  "stat5_value": "50+",
+  "stat5_label_zh": "家族信託及企業客戶",
+  "stat5_label_en": "Family Trust & Corporate Clients",
+
+  "compliance_desc_zh": "作為香港持牌信託或公司服務提供者（牌照編號：TC010106），金泉集團嚴格遵守《打擊洗錢及恐怖分子資金籌集條例》（AMLO）的所有要求，確保業務運營符合最高監管標準。",
+  "compliance_desc_en": "As a licensed Trust or Company Service Provider in Hong Kong (Licence No. TC010106), Gold Spring Group strictly adheres to all requirements under the Anti-Money Laundering and Counter-Terrorist Financing Ordinance (AMLO), ensuring business operations meet the highest regulatory standards.",
+
+  "footer_copy": "© 2026 Gold Spring Group Holdings Limited（公司註冊編號：3033852）. All rights reserved."
 }
