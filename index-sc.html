@@ -929,5 +929,86 @@
 <!-- ===== JAVASCRIPT ===== -->
 <script src="./app.js" defer></script>
 
+<!-- ===== CMS CONTENT INJECTION ===== -->
+<script>
+(function(){
+  'use strict';
+  // Fetch content.json and inject into the DOM.
+  // Falls back gracefully — if the fetch fails, hardcoded HTML remains unchanged.
+  fetch('./content.json?_=' + Date.now())
+    .then(function(r){ return r.ok ? r.json() : Promise.reject('not found'); })
+    .then(function(c){
+      // Helper: set textContent of all matching elements
+      function setText(sel, val) {
+        if (!val) return;
+        document.querySelectorAll(sel).forEach(function(el){ el.textContent = val; });
+      }
+      // Helper: set innerHTML of first matching element
+      function setHTML(sel, val) {
+        if (!val) return;
+        var el = document.querySelector(sel);
+        if (el) el.innerHTML = val;
+      }
+
+      // Hero
+      setText('.hero-title-zh', c.hero_title_zh);
+      setText('.hero-title-en', c.hero_title_en);
+      setText('.hero-desc-zh', c.hero_desc_zh);
+      setText('.hero-desc-en', c.hero_desc_en);
+
+      // About (first occurrence in #about)
+      var aboutSection = document.getElementById('about');
+      if (aboutSection) {
+        var aboutZh = aboutSection.querySelector('.about-text-zh');
+        var aboutEn = aboutSection.querySelector('.about-text-en');
+        if (aboutZh && c.about_intro_zh) aboutZh.textContent = c.about_intro_zh;
+        if (aboutEn && c.about_intro_en) aboutEn.textContent = c.about_intro_en;
+      }
+
+      // Target clients
+      setText('.target-text-zh', c.target_clients_zh);
+      setText('.target-text-en', c.target_clients_en);
+
+      // Leadership
+      setText('.leader-name-zh', c.leader_name_zh);
+      setText('.leader-name-en', c.leader_name_en);
+      setText('.leader-role-zh', c.leader_role_zh);
+      setText('.leader-role-en', c.leader_role_en);
+      // Bio uses innerHTML (contains HTML markup)
+      setHTML('.leader-bio-zh', c.leader_bio_zh);
+      setHTML('.leader-bio-en', c.leader_bio_en);
+
+      // Careers
+      setText('.careers-text-zh', c.careers_text_zh);
+      setText('.careers-text-en', c.careers_text_en);
+
+      // Office intro
+      setText('.office-intro-zh', c.office_intro_zh);
+      setText('.office-intro-en', c.office_intro_en);
+
+      // Contact values (using .contact-value inside .contact-item)
+      if (c.contact_address) {
+        var addrEl = document.querySelector('.contact-item:nth-child(1) .contact-value');
+        if (addrEl) addrEl.innerHTML = c.contact_address.replace(/\n/g, '<br>');
+      }
+      if (c.contact_email) {
+        document.querySelectorAll('a[href^="mailto:"]').forEach(function(el){
+          el.href = 'mailto:' + c.contact_email;
+          if (el.textContent.indexOf('@') > -1) el.textContent = c.contact_email;
+        });
+      }
+      if (c.contact_whatsapp) {
+        var waNum = c.contact_whatsapp.replace(/[^0-9]/g, '');
+        document.querySelectorAll('a[href^="https://wa.me/"]').forEach(function(el){
+          el.href = 'https://wa.me/' + waNum;
+        });
+        var waValEl = document.querySelector('.contact-item:nth-child(3) .contact-value a');
+        if (waValEl) waValEl.textContent = c.contact_whatsapp;
+      }
+    })
+    .catch(function(){/* silently ignore — hardcoded content remains */});
+})();
+</script>
+
 </body>
 </html>
